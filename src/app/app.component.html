@@ -14,11 +14,7 @@
         </a>
       </nav>
       <br />
-      <mat-select>
-        <mat-option *ngFor="let city of cities" [value]="city">
-          {{ city.name }}
-        </mat-option>
-      </mat-select>
+      <app-home-weather></app-home-weather>
     </mat-sidenav>
 
     <div class="container">
@@ -27,6 +23,7 @@
   </mat-sidenav-container>
 
   <div class="external-container">
-    <app-external-home></app-external-home>
+    <app-external-home> </app-external-home>
+    <app-external-details></app-external-details>
   </div>
 </div>

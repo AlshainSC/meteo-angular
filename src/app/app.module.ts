@@ -10,14 +10,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ExternalHomeComponent } from './externals/external-home/external-home.component';
 import { ExternalDetailsComponent } from './externals/external-details/external-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, HomeWeatherComponent, ForecastComponent, ExternalHomeComponent, ExternalDetailsComponent],
+  declarations: [
+    AppComponent,
+    HomeWeatherComponent,
+    ForecastComponent,
+    ExternalHomeComponent,
+    ExternalDetailsComponent,
+  ],
   imports: [
     BrowserModule,
     MaterialModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
