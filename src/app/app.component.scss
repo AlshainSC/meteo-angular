@@ -1,0 +1,40 @@
+.mat-sidenav-container {
+  background: #f5f5f5;
+  flex: 1;
+}
+
+mat-sidenav {
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+  width: 200px;
+  padding: 10px;
+}
+
+mat-select {
+  background-color: grey;
+  color: white;
+  align-items: center;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: lightblue;
+}
+
+.link {
+  display: flex !important;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.main {
+  flex: 2;
+  padding: 30px;
+}
+
+h1 {
+  color: black;
+}
