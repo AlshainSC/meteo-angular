@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Forecast } from '../common/forecast';
 
 const currentURL =
   'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,apparent_temperature,rain,showers,snowfall,weathercode,windspeed_10m,winddirection_10m,temperature_80m,temperature_120m,temperature_180m&current_weather=true';

@@ -12,25 +12,29 @@ export class HomeWeatherComponent implements OnInit {
   forecast: any = [];
   weatherDescription: string = '';
 
-  constructor(private apiService: ApiServiceService) {
+  constructor(private apiService: ApiServiceService) {}
+
+  ngOnInit() {
     this.getWeather();
     this.getForecast();
   }
 
-  ngOnInit() {}
-
   getWeather() {
     this.apiService.current().subscribe((data) => {
-      this.current = data;
-      console.log('current object ::', this.current);
+      if (data) {
+        this.current = data;
+        console.log('current object ::', this.current);
+      }
     });
   }
 
   getForecast() {
     this.apiService.daily().subscribe((data: any) => {
       console.log('data ::', data);
-      this.forecast = this.mapForecast(data.daily);
-      console.log('forecast object ::', this.forecast);
+      if (data) {
+        this.forecast = this.mapForecast(data.daily);
+        console.log('forecast object ::', this.forecast);
+      }
       // console.log('forecast object ::', this.forecast);
     });
   }
@@ -39,8 +43,8 @@ export class HomeWeatherComponent implements OnInit {
     return forecast.time.map((time: any, index: string | number) => ({
       time,
       weathercode: forecast.weathercode[index],
-      minTemperature: forecast.apparent_temperature_max[index],
-      maxTemperature: forecast.apparent_temperature_min[index],
+      minTemperature: forecast.apparent_temperature_min[index],
+      maxTemperature: forecast.apparent_temperature_max[index],
       windspeed: forecast.windspeed_10m_max[index],
     }));
   }
