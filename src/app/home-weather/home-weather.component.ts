@@ -45,7 +45,7 @@ export class HomeWeatherComponent implements OnInit {
       weathercode: forecast.weathercode[index],
       minTemperature: forecast.apparent_temperature_min[index],
       maxTemperature: forecast.apparent_temperature_max[index],
-      windspeed: forecast.windspeed_10m_max[index],
+      precipitation: forecast.precipitation_sum[index],
     }));
   }
 

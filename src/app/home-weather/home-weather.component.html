@@ -40,7 +40,6 @@
     <h1>Weekly Forecast</h1>
   </div>
   <div class="forecast-list">
-
     <mat-card class="mat" *ngFor="let forecast of forecast">
       <mat-card-header>
         <mat-card-title> {{ mapDateToDay(forecast.time) }} </mat-card-title>
@@ -53,19 +52,19 @@
           <div class="sub-card">
             <span>High</span>
             <br />
-            <span>{{ forecast.minTemperature }} °C</span>
+            <span>{{ forecast.maxTemperature }} °C</span>
           </div>
           <br />
           <div class="sub-card">
             <span>Low</span>
             <br />
-            <span>{{ forecast.maxTemperature }} °C</span>
+            <span>{{ forecast.minTemperature }} °C</span>
           </div>
           <br />
           <div class="sub-card">
-            <span>Windspeed</span>
+            <span>Precipitation</span>
             <br />
-            <span>{{ forecast.windspeed }} km/h</span>
+            <span>{{ forecast.precipitation }} mm</span>
           </div>
         </div>
         <div class="icon-container">

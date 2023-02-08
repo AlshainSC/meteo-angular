@@ -4,6 +4,6 @@ export class Forecast {
     public weatherCode: number,
     public minTemperature: number,
     public maxTemperature: number,
-    public windSpeed: number
+    public precipitation: number
   ) {}
 }
