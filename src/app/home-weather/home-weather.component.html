@@ -1,18 +1,84 @@
-<mat-card>
-  <mat-card-title>
-    <h1>City</h1>
-    <h2>Forecast</h2>
-    <mat-list>
-      <mat-list-item *ngFor="let forecast of forecasts">
-        <mat-icon mat-list-icon>cloud</mat-icon>
-        <h3 mat-line>{{ forecast.day || forecast.date }}</h3>
-        <p mat-line>
-          {{ forecast.temp }}°C
-          <span class="mat-caption">({{ forecast.temp }}°F)</span>
-        </p>
-      </mat-list-item>
-    </mat-list>
-  </mat-card-title>
-</mat-card>
+<div class="main-container">
+  <div>
+    <h1>Current Weather</h1>
+  </div>
 
-<app-forecast></app-forecast>
+  <div class="current-container">
+    <mat-card class="mat-elevation-z5">
+      <mat-card-header>
+        <mat-card-title> Berlin</mat-card-title>
+
+        <mat-card-subtitle> Today </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="container">
+          <div class="sub-card">
+            <span>Temperature</span>
+            <br />
+            <span>{{ this.current?.current_weather.temperature }} °C</span>
+          </div>
+          <div class="sub-card">
+            <span>Windspeed</span>
+            <br />
+            <span>{{ this.current?.current_weather.windspeed }} km/h</span>
+          </div>
+        </div>
+        <div class="icon-container">
+          <!-- generate icon based on current object -->
+          <img
+            src="http://openweathermap.org/img/wn/{{
+              mapWeatherCode(this.current?.hourly.weathercode[0])
+            }}d@2x.png"
+            alt="weather icon"
+            class="sub-icon"
+          />
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div>
+    <h1>Weekly Forecast</h1>
+  </div>
+  <div class="forecast-list">
+    <mat-card
+      class="mat-elevation-z5"
+      *ngFor="let forecast of forecast.slice(1, 7)"
+    >
+      <mat-card-header>
+        <mat-card-title> Berlin </mat-card-title>
+        <mat-card-subtitle> {{ forecast.time }} </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="container">
+          <div class="sub-card">
+            <span>High</span>
+            <br />
+            <span>{{ forecast.minTemperature }} °C</span>
+          </div>
+          <br />
+          <div class="sub-card">
+            <span>Low</span>
+            <br />
+            <span>{{ forecast.maxTemperature }} °C</span>
+          </div>
+          <br />
+          <div class="sub-card">
+            <span>Windspeed</span>
+            <br />
+            <span>{{ forecast.windspeed }} km/h</span>
+          </div>
+        </div>
+        <div class="icon-container">
+          <img
+            src="http://openweathermap.org/img/wn/{{
+              mapWeatherCode(forecast.weathercode)
+            }}d@2x.png"
+            alt="weather icon"
+            class="sub-icon"
+          />
+          <span>{{ weatherDescription }}</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

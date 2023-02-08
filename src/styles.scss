@@ -13,6 +13,7 @@ body {
   height: 100%;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow: hidden;
   // display: flex;
 }
 
@@ -23,9 +24,18 @@ app-root {
 }
 
 mat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 10px;
   padding: 10px;
-  width: 300px;
+  width: 100%;
+  color: white;
+  background-color: grey;
+}
+mat-card::ng-deep.mat-card-header-text {
+  width: 100%;
 }
 
 .container {
