@@ -1,7 +1,7 @@
 export interface IForecast {
-  date: string;
-  weatherCode: string;
+  time: string | number;
+  weathercode: string | number;
   minTemperature: number;
   maxTemperature: number;
-  windSpeed: number;
+  windspeed: number;
 }
