@@ -45,6 +45,11 @@ export class HomeWeatherComponent implements OnInit {
     }));
   }
 
+  mapDateToDay(date: string) {
+    const day = new Date(date).toLocaleString('en-us', { weekday: 'long' });
+    return day;
+  }
+
   mapWeatherCode(code: number) {
     switch (code) {
       case 0:

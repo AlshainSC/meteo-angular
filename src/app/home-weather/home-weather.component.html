@@ -4,7 +4,7 @@
   </div>
 
   <div class="current-container">
-    <mat-card class="mat-elevation-z5">
+    <mat-card class="mat">
       <mat-card-header>
         <mat-card-title> Berlin</mat-card-title>
 
@@ -40,13 +40,12 @@
     <h1>Weekly Forecast</h1>
   </div>
   <div class="forecast-list">
-    <mat-card
-      class="mat-elevation-z5"
-      *ngFor="let forecast of forecast.slice(1, 7)"
-    >
+    <mat-card class="mat" *ngFor="let forecast of forecast.slice(1, 7)">
       <mat-card-header>
-        <mat-card-title> Berlin </mat-card-title>
-        <mat-card-subtitle> {{ forecast.time }} </mat-card-subtitle>
+        <mat-card-title> {{ mapDateToDay(forecast.time) }} </mat-card-title>
+        <mat-card-subtitle>
+          {{ forecast.time }}
+        </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <div class="container">

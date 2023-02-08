@@ -14,6 +14,8 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   overflow: hidden;
+  background-image: linear-gradient(to bottom right, #fdfcfb, #e2d1c3);
+
   // display: flex;
 }
 
@@ -33,9 +35,6 @@ mat-card {
   width: 100%;
   color: white;
   background-color: grey;
-}
-mat-card::ng-deep.mat-card-header-text {
-  width: 100%;
 }
 
 .container {
