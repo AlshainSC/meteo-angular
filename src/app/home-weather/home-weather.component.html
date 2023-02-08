@@ -40,10 +40,7 @@
     <h1>Weekly Forecast</h1>
   </div>
   <div class="forecast-list">
-    <mat-card
-      class="mat-elevation-z5"
-      *ngFor="let forecast of forecast.slice(1, 7)"
-    >
+    <mat-card class="mat-elevation-z5" *ngFor="let forecast of forecast">
       <mat-card-header>
         <mat-card-title> Berlin </mat-card-title>
         <mat-card-subtitle> {{ forecast.time }} </mat-card-subtitle>
