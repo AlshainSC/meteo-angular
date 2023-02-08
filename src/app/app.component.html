@@ -1,29 +1,11 @@
-<div class="main-container">
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side" opened="true" class="app-sidenav">
-      <nav>
-        <a
-          mat-button
-          class="link"
-          *ngFor="let link of links"
-          [routerLink]="link.path"
-          routerLinkActive="active"
-        >
-          <mat-icon class="icon">{{ link.icon }}</mat-icon>
-          {{ link.title }}
-        </a>
-      </nav>
-      <br />
-      <app-home-weather></app-home-weather>
-    </mat-sidenav>
-
-    <div class="container">
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-container>
-
-  <div class="external-container">
-    <app-external-home> </app-external-home>
-    <app-external-details></app-external-details>
-  </div>
+<div class="container">
+  <button
+    mat-raised-button
+    routerLink="/forecast"
+    routerLinkActive="activeButton"
+  >
+    Start
+  </button>
 </div>
+
+<router-outlet></router-outlet>
